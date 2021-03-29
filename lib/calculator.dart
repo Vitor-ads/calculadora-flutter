@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
+import 'package:share/share.dart';
 import 'memory.dart';
 
 class Calculator extends StatefulWidget {
@@ -17,6 +17,14 @@ class _CalculatorState extends State<Calculator> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text('Calculadora'),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.share),
+            onPressed: () {
+              Share.share('check out my new calculator app');
+            },
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[

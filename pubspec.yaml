@@ -22,7 +22,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   auto_size_text: ^2.1.0
   splashscreen: ^1.2.0
-
+  share:
 dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
   flutter_test:
