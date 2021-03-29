@@ -46,10 +46,11 @@ class _CalculatorState extends State<Calculator> {
                 maxLines: 1,
                 textAlign: TextAlign.end,
                 style: TextStyle(
+                  fontFamily: 'calculator',
                   fontWeight: FontWeight.w200,
                   decoration: TextDecoration.none,
                   fontSize: 80.0,
-                  color: Colors.white,
+                  color: Colors.green,
                 ),
               ),
             ),
@@ -60,7 +61,9 @@ class _CalculatorState extends State<Calculator> {
   }
 
   Widget _buildKeyboardButton(String label,
-      {int flex = 1, Color textColor = Colors.white, Color backgroundColor = Colors.black}) {
+      {int flex = 1,
+      Color textColor = Colors.white,
+      Color backgroundColor = Colors.black}) {
     return Expanded(
       flex: flex,
       child: RaisedButton(
