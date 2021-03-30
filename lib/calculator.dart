@@ -21,7 +21,7 @@ class _CalculatorState extends State<Calculator> {
           new IconButton(
             icon: new Icon(Icons.share),
             onPressed: () {
-              Share.share('check out my new calculator app');
+              Share.share('check out my new calculator');
             },
           ),
         ],
@@ -46,7 +46,24 @@ class _CalculatorState extends State<Calculator> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0),
+              child: AutoSizeText(
+                _memory.story,
+                minFontSize: 20.0,
+                maxFontSize: 80.0,
+                maxLines: 1,
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                  fontFamily: 'calculator',
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.none,
+                  fontSize: 80.0,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: AutoSizeText(
                 _memory.result,
                 minFontSize: 20.0,

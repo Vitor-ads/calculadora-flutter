@@ -6,13 +6,14 @@ class Memory {
   int _bufferIndex = 0;
 
   String result = '0';
-
+  String story = '0';
   Memory() {
     _clear();
   }
 
   void _clear() {
     result = '0';
+    story = '0';
     _buffer.setAll(0, [0.0, 0.0]);
     _bufferIndex = 0;
     _operation = null;
@@ -51,13 +52,17 @@ class Memory {
     if (_usedOperation && operation == _operation) return;
 
     if (_bufferIndex == 0) {
+      story += _buffer[0].toString();
       _bufferIndex = 1;
     } else {
+      story += _buffer[1].toString();
       _buffer[0] = _calculate();
     }
 
-    if (operation != '=') _operation = operation;
-
+    if (operation != '=') {
+      _operation = operation;
+      story += operation;
+    }
     result = _buffer[0].toString();
     result = result.endsWith('.0') ? result.split('.')[0] : result;
 
